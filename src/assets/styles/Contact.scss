@@ -25,7 +25,7 @@
 
 label {
   font-size: 1.2rem;
-  font-family: 'DomaineDispNar-Medium', sans-serif;
+  font-family: "DomaineDispNar-Medium", sans-serif;
 }
 
 .form-flex {
@@ -45,4 +45,70 @@ form {
 .body-form {
   width: 100% !important;
   margin-bottom: 15px !important;
+}
+
+/* Dark mode overrides */
+.dark-mode #contact,
+.dark-mode .contact_wrapper {
+  color: #e6eef8; /* light-ish text on dark */
+}
+
+.dark-mode .contact-form {
+  button {
+    background-color: #6b21a8; /* purple accent */
+    color: #ffffff;
+  }
+
+  button:hover {
+    background-color: #5b1891;
+    color: #ffffff;
+  }
+
+  fieldset {
+    background-color: transparent;
+  }
+
+  /* MUI TextField overrides for dark backgrounds */
+  .MuiFormControl-root {
+    color: #e6eef8;
+  }
+
+  .MuiOutlinedInput-root {
+    background-color: rgba(255, 255, 255, 0.02);
+    color: #e6eef8;
+  }
+
+  .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .MuiFormHelperText-root {
+    color: #f3f4f6;
+  }
+}
+
+/* Force input, label and placeholder colors in dark mode so text is readable prior to focus */
+.dark-mode .contact-form {
+  .MuiInputBase-input,
+  .MuiOutlinedInput-input,
+  input,
+  textarea {
+    color: #e6eef8 !important;
+  }
+
+  .MuiInputLabel-root {
+    color: rgba(230, 238, 248, 0.85) !important;
+  }
+
+  /* Placeholder color */
+  input::placeholder,
+  textarea::placeholder {
+    color: rgba(230, 238, 248, 0.55) !important;
+    opacity: 1; /* ensure placeholder visible across browsers */
+  }
+
+  /* Outline / border when unfocused */
+  .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(255, 255, 255, 0.08) !important;
+  }
 }
