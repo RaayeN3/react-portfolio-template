@@ -9,13 +9,13 @@
 
   button {
     float: right;
-    background-color: white;
-    color: #050f0b;
+    background-color: #ef4444; /* red-500 */
+    color: #ffffff;
   }
 
   button:hover {
-    background-color: #5000ca;
-    color: white;
+    background-color: #dc2626; /* red-600 hover */
+    color: #ffffff;
   }
 
   fieldset {
@@ -32,6 +32,7 @@ label {
   display: flex;
   gap: 15px;
   padding-bottom: 15px;
+  width: 100%;
 }
 
 .form-flex .MuiFormControl-root {
@@ -47,6 +48,83 @@ form {
   margin-bottom: 15px !important;
 }
 
+.contact-email {
+  margin-top: 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.contact-logo-wrapper {
+  margin-bottom: 12px;
+
+  img {
+    width: 150px;
+    display: block;
+  }
+}
+
+.contact-sections {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  margin-top: 8px;
+}
+
+.contact-left {
+  flex: 0 0 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact-right {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .contact-sections {
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .contact-left {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .contact-logo-wrapper img {
+    margin: 0 auto;
+  }
+
+  .form-flex {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .form-flex .MuiFormControl-root {
+    width: 100%;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  .contact-right {
+    width: 100%;
+  }
+
+  form {
+    width: 100% !important;
+  }
+
+  .MuiInputBase-root {
+    width: 100%;
+  }
+}
+
 /* Dark mode overrides */
 .dark-mode #contact,
 .dark-mode .contact_wrapper {
@@ -55,12 +133,12 @@ form {
 
 .dark-mode .contact-form {
   button {
-    background-color: #6b21a8; /* purple accent */
+    background-color: #ef4444; /* red-500 */
     color: #ffffff;
   }
 
   button:hover {
-    background-color: #5b1891;
+    background-color: #dc2626; /* red-600 hover */
     color: #ffffff;
   }
 

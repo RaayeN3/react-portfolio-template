@@ -24,7 +24,7 @@ a {
 }
 
 a:hover {
-  color: #5000ca;
+  color: #ef4444;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out;
 }
@@ -43,8 +43,10 @@ button {
 }
 
 .navigation-bar {
-  justify-content: space-between;
+  justify-content: center;
   background-color: #0d1116;
+  display: flex;
+  align-items: center;
 
   button {
     font-size: 1.1rem;
@@ -55,6 +57,15 @@ button {
 
   svg {
     cursor: pointer;
+  }
+  
+  .nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-right {
+    margin-left: auto;
   }
 }
 
@@ -122,7 +133,12 @@ button {
   }
 
   a:hover {
-    color: #5000ca;
+    color: #ef4444;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out;
+  }
+  a:hover {
+    color: #ef4444;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
       border-color 0.15s ease-in-out;
   }
@@ -175,6 +191,22 @@ button {
   @media (max-width: 768px) {
     .items-container {
       padding: 5% 5%;
+    }
+    
+    .container {
+      margin-top: 40px;
+    }
+    
+    body {
+      font-size: 1rem !important;
+    }
+    
+    h1 {
+      font-size: 2rem;
+    }
+    
+    h2 {
+      font-size: 1.5rem;
     }
   }
 }

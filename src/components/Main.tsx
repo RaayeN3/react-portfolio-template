@@ -3,19 +3,17 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import "../assets/styles/Main.scss";
 import TextType from "./TextType";
+import Logo from "./Logo";
 
 // Lazy-load the heavy Prism background after other imports
 const Prism = React.lazy(() => import("./PrismProps"));
 
 type MainProps = {
-  mode?: string;
+  mode?: "light" | "dark";
 };
 
 function Main({ mode = "dark" }: MainProps) {
-  const logoSrc =
-    mode === "light"
-      ? `${process.env.PUBLIC_URL}/eagleeyetechlogocolored.png`
-      : `${process.env.PUBLIC_URL}/eagleeyetechlogowhite.png`;
+  // Logo is rendered by the Logo component which respects the passed mode
 
   const prismProps: any = {
     animationType: "hover",
@@ -38,7 +36,7 @@ function Main({ mode = "dark" }: MainProps) {
       </Suspense>
       <div className="about-section">
         <div className="image-wrapper">
-          <img src={logoSrc} alt="Avatar" />
+          <Logo mode={mode} />
         </div>
         <div className="content">
           <div className="social_icons">

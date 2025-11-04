@@ -8,7 +8,6 @@ import "@testing-library/jest-dom";
 // jsdom doesn't implement IntersectionObserver or window.scrollTo; some components rely on them.
 // Provide lightweight mocks so tests don't throw at runtime.
 class IntersectionObserverMock {
-  constructor() {}
   observe() {}
   unobserve() {}
   disconnect() {}

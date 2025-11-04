@@ -15,6 +15,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
+import Logo from "./Logo";
 
 const drawerWidth = 240;
 const navItems = [
@@ -101,31 +102,37 @@ function Navigation({ parentToChild, modeChange }: any) {
         className={`navbar-fixed-top${scrolled ? " scrolled" : ""}`}
       >
         <Toolbar className="navigation-bar">
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          {mode === "dark" ? (
-            <LightModeIcon onClick={() => modeChange()} />
-          ) : (
-            <DarkModeIcon onClick={() => modeChange()} />
-          )}
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Button
-                key={item[0]}
-                onClick={() => scrollToSection(item[1])}
-                sx={{ color: "#fff" }}
-              >
-                {item[0]}
-              </Button>
-            ))}
-          </Box>
+          <div className="nav-left">
+            <Logo mode={mode} />
+          </div>
+          
+          <div className="nav-right">
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2, display: { sm: "none" } }}
+            >
+              <MenuIcon />
+            </IconButton>
+            {mode === "dark" ? (
+              <LightModeIcon onClick={() => modeChange()} style={{ marginRight: '10px' }} />
+            ) : (
+              <DarkModeIcon onClick={() => modeChange()} style={{ marginRight: '10px' }} />
+            )}
+            <Box sx={{ display: { xs: "none", sm: "block" } }}>
+              {navItems.map((item) => (
+                <Button
+                  key={item[0]}
+                  onClick={() => scrollToSection(item[1])}
+                  sx={{ color: "#fff" }}
+                >
+                  {item[0]}
+                </Button>
+              ))}
+            </Box>
+          </div>
         </Toolbar>
       </AppBar>
       <nav>

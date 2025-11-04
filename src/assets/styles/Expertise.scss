@@ -106,11 +106,18 @@
     }
 
     .skills-container .skills-grid {
-      display: initial;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
     }
 
     .skills-container .skills-grid .skill {
       padding-bottom: 5%;
+    }
+    
+    .icon {
+      width: 48px;
+      height: 48px;
     }
   }
 
